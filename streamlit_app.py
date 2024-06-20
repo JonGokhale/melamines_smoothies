@@ -1,6 +1,7 @@
 import streamlit as st
 from snowflake.snowpark.functions import col
 import requests
+import pandas as pd
 
 # Title and description
 st.title("Customize Your Smoothie! :cup_with_straw:")
