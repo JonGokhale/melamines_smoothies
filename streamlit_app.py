@@ -46,7 +46,7 @@ if ingredients_list:
                 st.dataframe(fv_df)
       
 
-    my_insert_stmt = f"""
+    
         INSERT INTO smoothies.public.orders (ingredients, name_on_order)
         VALUES ('{ingredients_string}', '{name_on_order}')
     """
