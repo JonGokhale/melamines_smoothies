@@ -28,7 +28,7 @@ ingredients_list = st.multiselect(
 if ingredients_list:
     st.write(ingredients_list)
     
-    ingredients_string = ', '.join(ingredients_list)
+    ingredients_string = ''.join(ingredients_list)
 
     # Create the insert statement using parameterized queries
     my_insert_stmt = f"""INSERT INTO smoothies.public.orders (ingredients, name_on_order)
