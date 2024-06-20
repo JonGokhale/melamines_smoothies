@@ -1,5 +1,6 @@
 import streamlit as st
 from snowflake.snowpark.functions import col
+import requests
 
 # Title and description
 st.title("Customize Your Smoothie! :cup_with_straw:")
@@ -49,5 +50,8 @@ if ingredients_list:
 import requests
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
 # st.text(fruityvice_response.json())
-fv_df = st.dataframe(data=fruityvice_responce.json(), use_container_width=True)
 
+fv_df = st.dataframe(data=fruityvice_response.json(), use_container_width=True)
+else:
+    # Display an error message if the request failed
+    st.error("Failed to retrieve data")
