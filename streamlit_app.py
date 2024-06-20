@@ -44,10 +44,7 @@ if ingredients_list:
                 fv_df = pd.DataFrame([fv_data])
                 st.subheader(f'{fruit_chosen} Nutrition Information')
                 st.dataframe(fv_df)
-            else:
-                st.error(f"Could not retrieve data for {fruit_chosen}.")
-        except Exception as e:
-            st.error(f"An error occurred: {e}")
+      
 
     my_insert_stmt = f"""
         INSERT INTO smoothies.public.orders (ingredients, name_on_order)
@@ -59,8 +56,6 @@ if ingredients_list:
         try:
             session.sql(my_insert_stmt).collect()
             st.success("Your Smoothie is ordered!", icon="✅")
-        except Exception as e:
-            st.error(f"An error occurred while submitting the order: {e}")
 
 
 
