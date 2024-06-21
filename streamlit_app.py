@@ -26,9 +26,9 @@ ingredients_list = st.multiselect(
 )
 
 # Display selected ingredients
-if ingredients_list:
-    st.write(ingredients_list)
-    st.write(ingredients_string)
+#if ingredients_list:
+#    st.write(ingredients_list)
+#    st.write(ingredients_string)
     
 if ingredients_list:   
     ingredients_string = ''
